@@ -1,6 +1,6 @@
 import { render } from "ejs";
 import express from "express";
-import fetch from "node-fetch"; // Importeer node-fetch
+import fetch from "node-fetch";
 
 const app = express();
 const url = "https://cssday.nl/data.json";
@@ -13,7 +13,7 @@ app.use(express.static("public"));
 // Mijn routes
 
 // index
-app.get("/", async (request, response) => { // Maak de route-afhandeling asynchroon
+app.get("/", async (request, response) => {
   console.log(url);
 
   try {
