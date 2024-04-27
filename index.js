@@ -1,5 +1,6 @@
 import { render } from "ejs";
-import express, { response } from "express";
+import express from "express";
+import fetch from "node-fetch"; // Importeer node-fetch
 
 const app = express();
 const url = "https://cssday.nl/data.json";
@@ -12,10 +13,16 @@ app.use(express.static("public"));
 // Mijn routes
 
 // index
-app.get("/", (request, response) => {
-  console.log(request.query.methods);
-  const methodsUrl = url + "/methods?first=100";
-  response.render("index", data);
+app.get("/", async (request, response) => { // Maak de route-afhandeling asynchroon
+  console.log(url);
+
+  try {
+    const data = await fetchJson(url); 
+    response.render("index", { data }); 
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    response.status(500).send("Error fetching data");
+  }
 });
 
 app.set("port", process.env.PORT || 3000);
@@ -26,5 +33,5 @@ app.listen(app.get("port"), function () {
 async function fetchJson(url) {
   return await fetch(url)
     .then((response) => response.json())
-    .catch((error) => error);
+    .catch((error) => { throw error; });
 }
