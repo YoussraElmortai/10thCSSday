@@ -4,6 +4,9 @@ import fetch from "node-fetch";
 
 const app = express();
 const url = "https://cssday.nl/data.json";
+// const spakers = ;
+// const years = ;
+// const colors =  ;
 
 app.set("view engine", "ejs");
 app.set("views", "./views");
