@@ -24,18 +24,18 @@ h3{
 }
 
 header{
+    display: flex;
+    flex-direction: column;
     margin: 2rem;
-    width: 56vw
+    width: 80vw;
 }
 
-header div{
+.cta{
     display: flex;
     flex-direction: row;
     width: 75vw;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
 }
 
 header img{
@@ -46,6 +46,21 @@ main{
     margin: 2rem;
 }
 
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
 .speakers{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    padding: 1.5rem;
+}
+
+.speakers img{
     border-radius: 1.5rem;
+    height: 7.2rem;
+    width: 7.2rem;
 }

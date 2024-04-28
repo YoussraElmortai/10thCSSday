@@ -13,46 +13,54 @@
 
   <body>
     <header>
-    <h1>CSS Day Speakers</h1>
-    <p>
-      Welcome to CSS Day, where the evolution of CSS is not just a
-      journey but a celebration of a decade of remarkable
-      advancements. For a decade now, we have been the cornerstone of
-      the CSS community, bringing together designers, developers, spec
-      writers, and browser vendors in a dynamic exchange of ideas and
-      expertise. With an informal ambiance and ample opportunities for
-      networking, CSS Day has been the stage for geeky discussions and
-      groundbreaking insights. As we mark our illustrious 10th
-      anniversary edition on June 6 & 7, 2024, join us in
-      commemorating a decade of pushing the boundaries of CSS and
-      shaping its future.
-    </p>
+      <div>
+        <h1>CSS Day</h1>
+        <p>
+          Welcome to CSS Day, where the evolution of CSS is not just a
+          journey but a celebration of a decade of remarkable
+          advancements. For a decade now, we have been the cornerstone
+          of the CSS community, bringing together designers,
+          developers, spec writers, and browser vendors in a dynamic
+          exchange of ideas and expertise. With an informal ambiance
+          and ample opportunities for networking, CSS Day has been the
+          stage for geeky discussions and groundbreaking insights.
+          <p> As
+          we mark our illustrious 10th anniversary edition on June 6 &
+          7, 2024, join us in commemorating a decade of pushing the
+          boundaries of CSS and shaping its future.
+          </p>
+        </p>
+      </div>
 
-    <div>
-      <img src="star.svg">
-    <h2>Scroll through 10 years of CSSDay</h2>
-    <img src="star.svg">
-  </div>
-
-  </header>
+      <div class="cta">
+        <img src="star.svg" />
+        <h2>Scroll through 10 years of CSSDay</h2>
+        <img src="star.svg" />
+      </div>
+    </header>
 
     <main>
       <% Object.keys(data).forEach(year => { %> <% const yearData =
       data[year]; %>
       <h2><%= yearData.title %></h2>
 
-        <p>Number of Attendees: <%= yearData.attendees.count %></p>
-        <h3>Meet the speakers</h3>
-        <% yearData.speakers.forEach(speaker => { %>
-          <div> <span><%= speaker.name %></span>
-        <img class="speakers" src="<%= speaker.avatar %>" alt="<%= speaker.name %>" />
-          </div>
-        <% }); %>
-      <% }); %>
+      <p>Number of Attendees: <%= yearData.attendees.count %></p>
+      <h3>Meet the speakers</h3>
+      <div class="wrapper">
+      <% yearData.speakers.forEach(speaker => { %>
+        <div class="speakers <%= yearData.title.replace(/\s+/g, '') %>">
+        <img
+          src="<%= speaker.avatar %>"
+          alt="<%= speaker.name %>"
+        />
+        <div class="about">
+        <h2><%= speaker.name %></h2>
+      </div>
+      </div>
+      <% }); %> <% }); %>
+    </div>
     </main>
 
-    <footer>
-
-    </footer>
+    <footer></footer>
   </body>
 </html>
