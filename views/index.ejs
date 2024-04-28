@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <link rel="icon" href="" />
-    <link rel="stylesheet" href="/style.css">
-    <title>10 years of CSSDAY</title>
-  </head>
-  <body>
-    <h1>10 years of CSSDAY</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Day Speakers</title>
+</head>
+<body>
+    <h1>CSS Day Speakers</h1>
 
-    <main>
-        <div class="">
-        </div>
-    </main>
+    <div id="css-data">
+        <% Object.keys(data).forEach(year => { %>
+            <% const yearData = data[year]; %>
+            <details>
+                <summary><%= yearData.title %></summary>
 
-    <script src="/main.js"></script>
-  </body>
+                <div class="css-day__container">
+                    <p>Venue: <%= yearData.venue %></p>
+                    <p>Price: <%= yearData.price %></p>
+                    <p>Number of Attendees: <%= yearData.attendees.count %></p>
+                    <p class="css-day__number">Number of Days: <%= yearData.days %></p>
+                    <p>Speakers:</p>
+                </div>
+
+                <ul class="css-day__list">
+                    <% yearData.speakers.forEach(speaker => { %>
+                        <li><%= speaker.name %></li>
+                    <% }); %>
+                </ul>
+            </details>
+        <% }); %>
+    </div>
+</body>
 </html>
