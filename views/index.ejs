@@ -7,8 +7,12 @@
       content="width=device-width, initial-scale=1.0"
     />
     <title>CSS Day Speakers</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/main.js" defer></script>
   </head>
+
   <body>
+    <header>
     <h1>CSS Day Speakers</h1>
     <p>
       Welcome to CSS Day, where the evolution of CSS is not just a
@@ -23,26 +27,32 @@
       commemorating a decade of pushing the boundaries of CSS and
       shaping its future.
     </p>
-    <h2>Scroll through 10 years of CSSDay.</h2>
 
     <div>
+      <img src="star.svg">
+    <h2>Scroll through 10 years of CSSDay</h2>
+    <img src="star.svg">
+  </div>
+
+  </header>
+
+    <main>
       <% Object.keys(data).forEach(year => { %> <% const yearData =
       data[year]; %>
       <h2><%= yearData.title %></h2>
 
-      <div class="css-day__container">
         <p>Number of Attendees: <%= yearData.attendees.count %></p>
-        <p>Speakers:</p>
-      </div>
-
-      <ul class="css-day__list">
         <h3>Meet the speakers</h3>
         <% yearData.speakers.forEach(speaker => { %>
-        <li><%= speaker.name %></li>
-        <img src="<%= speaker.avatar %>" alt="<%= speaker.name %>" />
+          <div> <span><%= speaker.name %></span>
+        <img class="speakers" src="<%= speaker.avatar %>" alt="<%= speaker.name %>" />
+          </div>
         <% }); %>
-      </ul>
       <% }); %>
-    </div>
+    </main>
+
+    <footer>
+
+    </footer>
   </body>
 </html>
