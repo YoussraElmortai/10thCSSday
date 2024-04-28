@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>CSS Day Speakers</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>CSS Day Speakers</h1>
+    <p>
+      Welcome to CSS Day, where the evolution of CSS is not just a
+      journey but a celebration of a decade of remarkable
+      advancements. For a decade now, we have been the cornerstone of
+      the CSS community, bringing together designers, developers, spec
+      writers, and browser vendors in a dynamic exchange of ideas and
+      expertise. With an informal ambiance and ample opportunities for
+      networking, CSS Day has been the stage for geeky discussions and
+      groundbreaking insights. As we mark our illustrious 10th
+      anniversary edition on June 6 & 7, 2024, join us in
+      commemorating a decade of pushing the boundaries of CSS and
+      shaping its future.
+    </p>
+    <h2>Scroll through 10 years of CSSDay.</h2>
 
-    <div id="css-data">
-        <% Object.keys(data).forEach(year => { %>
-            <% const yearData = data[year]; %>
-            <details>
-                <summary><%= yearData.title %></summary>
+    <div>
+      <% Object.keys(data).forEach(year => { %> <% const yearData =
+      data[year]; %>
+      <h2><%= yearData.title %></h2>
 
-                <div class="css-day__container">
-                    <p>Venue: <%= yearData.venue %></p>
-                    <p>Price: <%= yearData.price %></p>
-                    <p>Number of Attendees: <%= yearData.attendees.count %></p>
-                    <p class="css-day__number">Number of Days: <%= yearData.days %></p>
-                    <p>Speakers:</p>
-                </div>
+      <div class="css-day__container">
+        <p>Number of Attendees: <%= yearData.attendees.count %></p>
+        <p>Speakers:</p>
+      </div>
 
-                <ul class="css-day__list">
-                    <% yearData.speakers.forEach(speaker => { %>
-                        <li><%= speaker.name %></li>
-                    <% }); %>
-                </ul>
-            </details>
+      <ul class="css-day__list">
+        <h3>Meet the speakers</h3>
+        <% yearData.speakers.forEach(speaker => { %>
+        <li><%= speaker.name %></li>
+        <img src="<%= speaker.avatar %>" alt="<%= speaker.name %>" />
         <% }); %>
+      </ul>
+      <% }); %>
     </div>
-</body>
+  </body>
 </html>
