@@ -1,66 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap");
 
-:root{
-    ---text-regular:"Josefin Sans", sans-serif;
-    ---headings:"Yeseva One", serif;
-    ---white: #f5f2ef;
-    ---black:#292827;
-    ---dark-grey:#414040;
-    ---orange:#cd853f;
-    ---light-orange: #ffa81c;
+:root {
+  ---text-regular: "Josefin Sans", sans-serif;
+  ---headings: "Yeseva One", serif;
+  ---white: #f5f2ef;
+  ---black: #292827;
+  ---dark-grey: #414040;
+  ---orange: #cd853f;
+  ---light-orange: #ffa81c;
 }
 
-body{
-    font-family: var(---text-regular);
-    background-color: var(---white);
-    color: var(---black);
-    margin: 0;
+body {
+  font-family: var(---text-regular);
+  background-color: var(---white);
+  color: var(---black);
+  margin: 0;
+  overflow-x: hidden;
 }
 
 h1,
 h2,
-h3{
-    font-family: var(---headings);
+h3 {
+  font-family: var(---headings);
 }
 
-header{
-    display: flex;
-    flex-direction: column;
-    margin: 2rem;
-    width: 80vw;
+header {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  width: 80vw;
+  height: 100vh;
 }
 
-.cta{
-    display: flex;
-    flex-direction: row;
-    width: 75vw;
-    align-items: center;
-    gap: 1.5rem;
+/* big blobby boii */
+
+.blob {
+  background: linear-gradient(
+    to right,
+    var(---light-orange),
+    var(---orange),
+    plum
+  );
+  height: 23rem;
+  opacity: 70%;
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -100;
+  animation: rotate 20s infinite;
+  filter: blur(10em);
 }
 
-header img{
-    height: 2rem;
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.2;
+  }
+
+  to {
+    rotate: 360deg;
+  }
 }
 
-main{
-    margin: 2rem;
+.cta {
+  display: flex;
+  flex-direction: row;
+  width: 75vw;
+  align-items: center;
+  gap: 2rem;
 }
 
-.wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+header img {
+  height: 2rem;
 }
 
-.speakers{
-    display: flex;
-    flex-direction: column;
-    width: 20rem;
-    padding: 1.5rem;
+main {
+  margin: 2rem;
 }
 
-.speakers img{
-    border-radius: 1.5rem;
-    height: 7.2rem;
-    width: 7.2rem;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  height: 100vh;
+}
+
+.speakers {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  padding: 1.5rem;
+}
+
+.speakers img {
+  border-radius: 1.5rem;
+  height: 7.2rem;
+  width: 7.2rem;
 }
