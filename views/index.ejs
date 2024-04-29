@@ -15,9 +15,9 @@
     <div class="blob"></div>
     <header>
       <div class="cta">
-        <img src="star.svg" />
+        <img class="sticker3" src="sticker3.png" aria-hidden="true">
         <h1>Scroll through 10 years of CSSDay</h1>
-        <img src="star.svg" />
+        <img class="sticker1" src="sticker1.png" aria-hidden="true">
       </div>
       <div>
         <h2>CSS Day</h2>
@@ -38,9 +38,9 @@
         </p>
       </div>
       <div class="scroll">
-      <div><img class="stickers" src="sticker1.png"><img class="CCSDay_img" src="shot1.jpg"><span>community</span></div>
-      <div><img class="stickers" src="sticker2.png"><img class="CCSDay_img" src="lunch1.jpg"><span>Exciting</span></div>
-      <div><img class="stickers" src="sticker3.png"><img class="CCSDay_img" src="speaker1.jpg"><span>Inspirational</span></div>
+      <div><img class="CCSDay_img" src="shot1.jpg"></div>
+      <div><img class="CCSDay_img" src="lunch1.jpg"></div>
+      <div><img class="CCSDay_img" src="speaker1.jpg"></div>
     </div>
     </header>
 
@@ -48,9 +48,6 @@
       <h2>Meet the speakers</h2>
       <% Object.keys(data).forEach(year => { %> <% const yearData =
       data[year]; %>
-      <h3><%= yearData.title %></h3>
-
-      <p>Number of Attendees: <%= yearData.attendees.count %></p>
       <div class="wrapper">
       <% yearData.speakers.forEach(speaker => { %>
         <div class="speakers <%= yearData.title.replace(/\s+/g, '') %>">
@@ -61,6 +58,8 @@
         />
         <div class="about">
         <h2><%= speaker.name %></h2>
+        <h3>Speaker on <%= yearData.title %></h3>
+        <p><%= yearData.title %></p>
       </div>
       </div>
       <% }); %> <% }); %>
