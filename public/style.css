@@ -28,8 +28,12 @@ header {
   display: flex;
   flex-direction: column;
   margin: 2rem;
+  height: 100%;
+  gap: 2rem;
+}
+
+header p {
   width: 80vw;
-  height: 100vh;
 }
 
 /* big blobby boii */
@@ -42,13 +46,13 @@ header {
     plum
   );
   height: 23rem;
-  opacity: 70%;
+  opacity: 75%;
   aspect-ratio: 1;
   position: absolute;
   border-radius: 50%;
   z-index: -100;
   animation: rotate 20s infinite;
-  filter: blur(10em);
+  filter: blur(8em);
 }
 
 @keyframes rotate {
@@ -74,6 +78,37 @@ header {
 
 header img {
   height: 2rem;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.scroll div{
+  position: relative;
+}
+
+.stickers {
+  position: absolute;
+  z-index: 3;
+  top: 7rem;
+  margin-left: 5rem;
+  height: 12rem;
+  width: 12rem;
+}
+
+.CCSDay_img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 1.5rem;
+  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.CCSDay_img:hover{
+  filter: grayscale(1);
 }
 
 main {
