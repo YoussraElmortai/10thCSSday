@@ -37,11 +37,6 @@
           </p>
         </p>
       </div>
-      <div class="scroll">
-      <div><img class="CCSDay_img" src="shot1.jpg"></div>
-      <div><img class="CCSDay_img" src="lunch1.jpg"></div>
-      <div><img class="CCSDay_img" src="speaker1.jpg"></div>
-    </div>
     </header>
 
     <main>
@@ -59,7 +54,7 @@
       <% Object.keys(data).forEach(year => { %> <% const yearData =
         data[year]; %>
         <div class="year">
-          <h2><%= yearData.title %></h2>
+          <h2>Meet the speakers of <%= yearData.title %></h2>
           <p></p>
           <div class="wrapper">
           <% yearData.talks.forEach(talk => { %>
