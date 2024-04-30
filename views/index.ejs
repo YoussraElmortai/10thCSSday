@@ -39,6 +39,16 @@
       </div>
     </header>
 
+    <div class="scroll">
+      <div class="carousel" aria-hidden="true">
+        <img src="lunch1.jpg" aria-hidden="true">
+        <img src="speaker1.jpg" aria-hidden="true">
+        <img src="shot1.jpg" aria-hidden="true">
+        <img src="sanne.jpg" aria-hidden="true">
+        <img src="fdnd.jpg" aria-hidden="true">
+      </div>
+    </div>
+
     <main>
       <section class="theyears">
         <p class="intro">
@@ -65,7 +75,7 @@
           <% yearData.talks.forEach(talk => { %>
             <div class="talk">
               <h3><%= talk.title %></h3>
-              <img src="<%= talk.speaker[0].avatar%>" alt="<%= talk.speaker[0].name %>">
+              <img src="<%= talk.speaker[0].avatar%>" alt="<%= talk.speaker[0].name %>" loading="lazy">
               <div class="about">
             <h4><%= talk.speaker[0].name %></h4>
             <span> from <%= talk.speaker[0].country %> </span>
