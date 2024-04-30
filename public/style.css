@@ -33,8 +33,25 @@ header {
 }
 
 header p {
-  width: 80vw;
+  margin-top: 2rem;
+  width: 75vw;
   font-size: 20px;
+  animation: fade 3s linear;
+  animation-timeline: view();
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 /* big blobby boii */
@@ -74,6 +91,7 @@ header p {
   display: flex;
   flex-direction: row;
   width: 75vw;
+  height: 30rem;
   align-items: center;
   gap: 2rem;
 }
@@ -95,7 +113,7 @@ header img {
 
 .sticker1 {
   position: absolute;
-  top: 5rem;
+  top: 27rem;
   z-index: -10;
   height: 12rem;
   width: 12rem;
