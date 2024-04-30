@@ -35,7 +35,6 @@ header {
 }
 
 header p {
-  margin-top: 2rem;
   width: 75vw;
   font-size: 20px;
   animation: fade 3s linear;
@@ -97,6 +96,8 @@ header p {
   align-items: center;
   gap: 2rem;
   justify-content: center;
+  font-size: 2.4rem;
+  margin: 2rem;
 }
 
 header img {
@@ -134,13 +135,12 @@ header img {
 
 main {
   position: relative;
-  margin: 2rem;
+  margin-left: 2rem;
 }
 
 .intro{
   width: 75vw;
   font-size: 20px;
-  margin-top: 2rem;
   animation: fade 3s linear;
   animation-timeline: view();
 }
@@ -159,9 +159,41 @@ main {
 .talk{
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 15rem;
   border: solid 2px var(---dark-grey);
   padding: 1rem;
 }
 
+.searchbar {
+  position: relative;
+}
+
+.searchbar span {
+  position: absolute;
+  top: 6rem;
+  left: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+input {
+  width: 15rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  font-size: 20px;
+}
+
+input:focus + span  {
+  opacity: 1; 
+}
+
+.sticker2 {
+  position: absolute;
+  z-index: -10;
+  top: -2rem;
+  height: 12rem;
+  width: 12rem;
+  rotate: 12deg;
+}
 

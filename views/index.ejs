@@ -13,12 +13,12 @@
 
   <body>
     <div class="blob"></div>
+    <div class="cta">
+      <img class="sticker3" src="sticker3.png" aria-hidden="true">
+      <h1>Scroll through 10 years of CSSDay</h1>
+      <img class="sticker1" src="sticker1.png" aria-hidden="true">
+    </div>
     <header>
-      <div class="cta">
-        <img class="sticker3" src="sticker3.png" aria-hidden="true">
-        <h1>Scroll through 10 years of CSSDay</h1>
-        <img class="sticker1" src="sticker1.png" aria-hidden="true">
-      </div>
       <div>
         <h2>CSS Day</h2>
         <p>
@@ -51,11 +51,16 @@
         During CCSDay, you're not just attending talks; you're diving headfirst into a vibrant community of CSS enthusiasts
       </p>
 
+      <div class="searchbar">
+      <input type="text" id="searchInput" placeholder="Search by speaker name">
+      <span>if your lazy</span>
+      <img class="sticker2" src="sticker2.png" aria-hidden="true">
+      </div>
+
       <% Object.keys(data).forEach(year => { %> <% const yearData =
         data[year]; %>
         <div class="year">
           <h2>Meet the speakers of <%= yearData.title %></h2>
-          <p></p>
           <div class="wrapper">
           <% yearData.talks.forEach(talk => { %>
             <div class="talk">
