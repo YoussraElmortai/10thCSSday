@@ -129,8 +129,8 @@ header img {
 }
 
 .CCSDay_img {
-  height: 15rem;
-  width: 15rem;
+  height: 30rem;
+  width: 30rem;
   border-radius: 1.5rem;
   transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -145,23 +145,26 @@ main {
   margin: 2rem;
 }
 
-.wrapper {
+.intro{
+  width: 75vw;
+  font-size: 20px;
+  margin-top: 2rem;
+}
+
+.year{
+  margin-top: 4rem;
+}
+
+.wrapper{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 2.5rem;
-  height: 100vh;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.speakers {
+.talk{
   display: flex;
   flex-direction: column;
-  width: 9rem;
-  padding: 1.5rem;
-}
-
-.speakers img {
-  border-radius: 1.5rem;
-  height: 8.2rem;
-  width: 8.2rem;
+  width: 20rem;
 }

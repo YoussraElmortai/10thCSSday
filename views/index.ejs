@@ -45,25 +45,40 @@
     </header>
 
     <main>
-      <h2>Meet the speakers</h2>
+      <section class="theyears">
+        <p class="intro">
+          Over the years, CCSDay has been an absolute treasure trove of talks ranging from mastering 
+          flexbox to getting creative with scroll animation using view(). 
+          It's like a feast for the CSS aficionado's soul!
+      </p>
+
+      <p class="intro">
+        During CCSDay, you're not just attending talks; you're diving headfirst into a vibrant community of CSS enthusiasts
+      </p>
+
       <% Object.keys(data).forEach(year => { %> <% const yearData =
-      data[year]; %>
-      <div class="wrapper">
-      <% yearData.speakers.forEach(speaker => { %>
-        <div class="speakers <%= yearData.title.replace(/\s+/g, '') %>">
-        <img
-          src="<%= speaker.avatar %>"
-          alt="<%= speaker.name %>"
-          loading="lazy"
-        />
-        <div class="about">
-        <h2><%= speaker.name %></h2>
-        <h3>Speaker on <%= yearData.title %></h3>
-        <p><%= yearData.title %></p>
-      </div>
-      </div>
-      <% }); %> <% }); %>
-    </div>
+        data[year]; %>
+        <div class="year">
+          <h2><%= yearData.title %></h2>
+          <p></p>
+          <div class="wrapper">
+          <% yearData.talks.forEach(talk => { %>
+            <div class="talk">
+              <h3><%= talk.title %></h3>
+              <img src="<%= talk.speaker[0].avatar%>" alt="<%= talk.speaker[0].name %>">
+              <div class="about">
+            <h4><%= talk.speaker[0].name %></h4>
+            <span> from <%= talk.speaker[0].country %> </span>
+            <p> <% if (talk.description) { %>
+              <%= talk.description %>
+           <% } %></p>
+          </div>
+        </div>
+            <% }); %>
+          </div>
+        </div>
+        <% }); %>
+      </section>
     </main>
 
     <footer></footer>
