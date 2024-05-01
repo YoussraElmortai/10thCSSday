@@ -1,29 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Yeseva+One&display=swap");
 
 :root {
-  ---text-regular: "Josefin Sans", sans-serif;
-  ---headings: "Yeseva One", serif;
-  ---white: #f5f2ef;
-  ---black: #292827;
-  ---dark-grey: #414040;
-  ---orange: #cd853f;
-  ---light-orange: #ffa81c;
+  --text-regular: "Josefin Sans", sans-serif;
+  --headings: "Yeseva One", serif;
+  --white: #f5f2ef;
+  --black: #292827;
+  --dark-grey: #414040;
+  --orange: #cd853f;
+  --light-orange: #ffa81c;
 }
 
 body {
-  font-family: var(---text-regular);
-  background-color: var(---white);
-  color: var(---black);
+  font-family: var(--text-regular);
+  background-color: var(--white);
+  color: var(--black);
   margin: 0;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(---headings);
+h1, h2, h3 {
+  font-family: var(--headings);
 }
 
 header {
@@ -34,7 +33,7 @@ header {
   gap: 3rem;
 }
 
-header p {
+header p, .intro {
   width: 75vw;
   font-size: 20px;
   animation: fade 3s linear;
@@ -45,27 +44,18 @@ header p {
   from {
     opacity: 0;
   }
-
   50% {
     opacity: 1;
   }
-
   to {
     opacity: 0;
   }
 }
 
-/* big blobby boii */
-
 .blob {
-  background: linear-gradient(
-    to right,
-    var(---light-orange),
-    var(---orange),
-    plum
-  );
+  background: linear-gradient(to right, var(--light-orange), var(--orange), plum);
   height: 23rem;
-  opacity: 75%;
+  opacity: 0.75;
   aspect-ratio: 1;
   position: absolute;
   border-radius: 50%;
@@ -76,14 +66,13 @@ header p {
 
 @keyframes rotate {
   from {
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
   50% {
-    scale: 1 1.2;
+    transform: scale(1, 1.2);
   }
-
   to {
-    rotate: 360deg;
+    transform: rotate(360deg);
   }
 }
 
@@ -105,13 +94,14 @@ header img {
 }
 
 .scroll {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  padding: 1.4rem;
+  border: solid 2px var(--dark-grey);
 }
 
-.scroll div{
+.scroll div {
   position: relative;
 }
 
@@ -138,32 +128,35 @@ main {
   margin-left: 2rem;
 }
 
-.intro{
-  width: 75vw;
-  margin-top: 2rem;
-  font-size: 20px;
-  animation: fade 3s linear;
-  animation-timeline: view();
-}
-
-.year{
+.year {
   margin-top: 4rem;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2rem;
 }
 
-.talk{
+.talk {
   display: flex;
   flex-direction: column;
   width: 15rem;
-  border: solid 2px var(---dark-grey);
-  padding: 1rem;
+  border: solid 2px var(--dark-grey);
+  padding: 1.5rem;
 }
+
+.talk:hover img{
+  filter: grayscale(10);
+}
+
+.talk:hover{
+  background: #414040;
+  color: #ffa81c;
+  border: solid 2px var(--black);
+}
+
 
 .searchbar {
   position: relative;
@@ -171,7 +164,7 @@ main {
 
 .searchbar span {
   position: absolute;
-  top: 6rem;
+  top: 9rem;
   left: 2rem;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -185,8 +178,8 @@ input {
   font-size: 20px;
 }
 
-input:focus + span  {
-  opacity: 1; 
+input:focus + span {
+  opacity: 1;
 }
 
 .sticker2 {
@@ -195,18 +188,10 @@ input:focus + span  {
   top: -2rem;
   height: 12rem;
   width: 12rem;
-  rotate: 12deg;
+  transform: rotate(12deg);
 }
 
-.scroll {
-  position: relative;
-  width: 100%;
-  height: 20rem;
-  padding: 1.4rem;
-  border: solid 2px var(---dark-grey);
-}
-
-.carousel{
+.carousel {
   position: absolute;
   z-index: 10;
   display: flex;
@@ -220,7 +205,6 @@ input:focus + span  {
   width: 30rem;
   height: auto;
   margin-right: 2rem;
-  transition: transform 0.3s ease;
 }
 
 .scroll img:hover {

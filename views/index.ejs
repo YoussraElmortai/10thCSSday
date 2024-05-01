@@ -38,7 +38,6 @@
         </p>
       </div>
     </header>
-
     <div class="scroll">
       <div class="carousel" aria-hidden="true">
         <img src="lunch1.jpg" aria-hidden="true">
@@ -47,7 +46,7 @@
         <img src="sanne.jpg" aria-hidden="true">
         <img src="fdnd.jpg" aria-hidden="true">
       </div>
-    </div>
+  </div>
 
     <main>
       <section class="theyears">
@@ -62,6 +61,7 @@
       </p>
 
       <div class="searchbar">
+        <h2>Meet the speakers</h2>
       <input type="text" id="searchInput" placeholder="Search by speaker name">
       <span>if your lazy</span>
       <img class="sticker2" src="sticker2.png" aria-hidden="true">
@@ -70,7 +70,6 @@
       <% Object.keys(data).forEach(year => { %> <% const yearData =
         data[year]; %>
         <div class="year">
-          <h2>Meet the speakers of <%= yearData.title %></h2>
           <div class="wrapper">
           <% yearData.talks.forEach(talk => { %>
             <div class="talk">
